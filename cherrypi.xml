@@ -1,44 +1,30 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="7" inline="false" x="42" y="-479">
-    <field name="MODE">UNTIL</field>
-    <value name="NUMBER">
-      <block type="sensor_button" id="27">
+  <block type="controls_if" id="130" inline="false" x="49" y="-517">
+    <value name="IF0">
+      <block type="sensor_button" id="138">
         <field name="OBJECT">ENTER</field>
       </block>
     </value>
-    <statement name="DO">
-      <block type="controls_if" id="34" inline="false">
-        <value name="IF0">
-          <block type="logic_compare" id="60" inline="true">
-            <field name="OP">LT</field>
-            <value name="A">
-              <block type="sensor_object" id="41">
-                <field name="OBJECT">LEFTFRONT</field>
-              </block>
-            </value>
-            <value name="B">
-              <block type="math_number" id="121">
-                <field name="NUM">70</field>
-              </block>
-            </value>
-          </block>
-        </value>
-        <statement name="DO0">
-          <block type="oled_color" id="99">
-            <field name="OBJECT">BLACK</field>
-            <next>
-              <block type="led_select" id="90" inline="true">
-                <field name="ACTION">FLASH</field>
-                <value name="LED">
-                  <block type="math_number" id="107">
-                    <field name="NUM">20</field>
-                  </block>
-                </value>
-              </block>
-            </next>
-          </block>
-        </statement>
+    <statement name="DO0">
+      <block type="comment_comment" id="140">
+        <field name="TEXT">take me to your leader!</field>
       </block>
     </statement>
+    <next>
+      <block type="movement_stutter" id="168">
+        <next>
+          <block type="robot_delay" id="170" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="178">
+                <field name="NUM">3000</field>
+              </block>
+            </value>
+            <next>
+              <block type="movement_stop" id="188"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
   </block>
 </xml>
